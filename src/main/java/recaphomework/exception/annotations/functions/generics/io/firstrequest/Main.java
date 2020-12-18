@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Main {
 
-    public static void main  (String... args) {
+    public static void main(String... args) {
 
-        iCatalog iCatalog = new SportItem() ;
+        iCatalog iCatalog = new SportItem();
         iCatalog.createSportItem("Shoes", "Football shoes", 300, SportType.FOT.getName());
         iCatalog.read();
         iCatalog.delete(0);
@@ -27,7 +27,7 @@ public class Main {
 
             for (SportItem sportItem : sportItemList) {
 
-                    System.out.println(sportItem);
+                System.out.println(sportItem);
             }
 
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("test.obj"));
@@ -41,7 +41,7 @@ public class Main {
 
             ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("test.obj"));
             Object objectValue = objectInputStream.readObject();
-            List<SportItem> sportItemDeserialized = (List<SportItem> ) objectValue;
+            List<SportItem> sportItemDeserialized = (List<SportItem>) objectValue;
             for (SportItem sportItem : sportItemDeserialized) {
 
                 System.out.println(sportItem);
@@ -60,7 +60,7 @@ public class Main {
                 }
             }
         }
-}
+    }
 
 
 }
